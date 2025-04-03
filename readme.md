@@ -1,4 +1,4 @@
-# SkillArch & ML4W Hyperland - [![Security Checks & Docker Builds](https://github.com/laluka/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/laluka/skillarch/actions/workflows/cicd.yml)
+# SkillArch & ML4W Hyperland - [![Security Checks & Docker Builds](https://github.com/laluka/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/laluka/skillarch/actions/workflows/cicd.yml)[![Security Checks from this fork](https://github.com/nicolas-serrand/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/nicolas-serrand/skillarch/actions/workflows/cicd.yml)
 
 <img src='assets/skillarch-full.png' width='250'>
 
