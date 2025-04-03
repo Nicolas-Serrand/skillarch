@@ -237,6 +237,7 @@ update-ml4w-hyprland: sanity-check
 
 install-additional-packages: sanity-check
 	yay --noconfirm --needed -S caido
+	yes|sudo pacman -S --noconfirm --needed obsidian
 
 install-ultimate-vimrc: sanity-check
 	@if [ ! -d "/home/$$USER/.vim_runtime" ]; then \
