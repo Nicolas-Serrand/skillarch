@@ -222,7 +222,8 @@ install-customisation: sanity-check install-gui-hyprland update-ml4w-hyprland in
 install-gui-hyprland: sanity-check
 	@if [ ! -d "/home/$$USER/.config/ml4w" ]; then \
 		echo "Installing ML4W Hyprland ..."; \
-		yay -S ml4w-hyprland && ml4w-hyprland-setup; \
+		yay --noconfirm --needed -S ml4w-hyprland; \
+		ml4w-hyprland-setup; \
 	fi
  
 
@@ -271,8 +272,8 @@ configure-ml4w: sanity-check
 	fi
 
 configure-vscode: sanity-check
-	ln -sf /opt/skillarch/customisation/vscode/settings.json  /home/$$USER/.config/Code/User/settings.json
-	ln -sf /opt/skillarch/customisation/vscode/keybindings.json  /home/$$USER/.config/Code/User/keybindings.json
+	ln -sf /opt/skillarch/customisation/vscode/settings.json  "/home/$$USER/.config/Code - OSS/User/settings.json"
+	ln -sf /opt/skillarch/customisation/vscode/keybindings.json  "/home/$$USER/.config/Code - OSS/User/keybindings.json"
 
 clean: ## Clean up system and remove unnecessary files
 	[ ! -f /.dockerenv ] && exit
