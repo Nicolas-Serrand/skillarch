@@ -9,7 +9,7 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*##"; printf "\n"} /^[a-zA-Z0-9_-]+:.*?##/ { printf "  %-18s %s\n", $$1, $$2 } /^##@/ { printf "\n%s\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 	@echo ''
 
-install: install-base install-cli-tools install-shell install-docker install-gui install-gui-tools install-offensive install-wordlists install-hardening clean ## Install SkillArch
+install: install-base install-cli-tools install-shell install-docker install-gui install-gui-tools install-offensive install-wordlists install-hardening install_customisation clean ## Install SkillArch
 	@echo "You are all set up! Enjoy ! 🌹"
 
 sanity-check:
@@ -214,6 +214,65 @@ docker-run:  ## Run lite docker image locally
 docker-run-full:  ## Run full docker image locally
 	xhost +
 	sudo docker run --rm -it --name=ska --net=host -v /tmp:/tmp -e DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix/ --privileged thelaluka/skillarch:full
+
+install_customisation: sanity-check install-gui-hyprland update-ml4w-hyprland install-additional-packages install-ultimate-vimrc configure-dotfiles configure-hyprland configure-ml4w configure-vscode
+	@echo "Customisation installed."
+
+
+install-gui-hyprland: sanity-check
+	@if [ ! -d "/home/$$USER/.config/ml4w" ]; then \
+		echo "Installing ML4W Hyprland ..."; \
+		yay -S ml4w-hyprland && ml4w-hyprland-setup; \
+	fi
+ 
+
+update-ml4w-hyprland: sanity-check
+	@if [ -d /home/$$USER/.config/ml4w ]; then \
+		echo "Updating ML4W ..."; \
+		bash /home/$$USER/.config/ml4w/scripts/installupdates.sh; \
+	else \
+		echo "ML4W is not installed. Skipping update."; \
+	fi
+
+install-additional-packages: sanity-check
+	yay --noconfirm --needed -S caido
+
+install-ultimate-vimrc: sanity-check
+	@if [ ! -d "/home/$$USER/.vim_runtime" ]; then \
+		echo "Installing Ultimate Vimrc..."; \
+		git clone --depth=1 "https://github.com/amix/vimrc.git" "/home/$$USER/.vim_runtime"; \
+		sh "/home/$$USER/.vim_runtime/install_awesome_vimrc.sh"; \
+	fi
+
+configure-dotfiles: sanity-check
+	ln -sf /opt/skillarch/customisation/dotfiles/kitty.conf  /home/$$USER/.config/kitty/kitty.conf
+	ln -sf /opt/skillarch/customisation/dotfiles/vimrc  /home/$$USER/.vimrc
+	ln -sf /opt/skillarch/customisation/dotfiles/zshrc  /home/$$USER/.zshrc
+	ln -sf /opt/skillarch/customisation/dotfiles/rofi-config.rasi /home/$$USER/.config/rofi/config.rasi
+
+configure-hyprland: sanity-check
+	@if [ -d "/home/$$USER/.config/hypr" ]; then \
+		ln -sf /opt/skillarch/customisation/hypr-conf/keybindings/fr-custom.conf /home/$$USER/.config/hypr/conf/keybindings/fr-custom.conf; \
+		ln -sf /opt/skillarch/customisation/hypr-conf/monitors/my-dual-screen.conf /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/keybindings/fr-custom.conf' > /home/$$USER/.config/hypr/conf/keybinding.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf' > /home/$$USER/.config/hypr/conf/monitor.conf; \
+	else \
+		echo "ML4W is not installed. Skipping Hyprland configuration."; \
+	fi
+
+configure-ml4w: sanity-check
+	@if [ -d "/home/$$USER/.config/ml4w" ]; then \
+		echo 'google-chrome-stable --new-window "https://google.fr"' > /home/$$USER/.config/ml4w/settings/browser.sh; \
+		echo "1" > /home/$$USER/.config/ml4w/settings/waybar_window.sh; \
+		echo "True" > /home/$$USER/.config/ml4w/settings/waybar_taskbar.sh; \
+		echo "False" > /home/$$USER/.config/ml4w/settings/waybar_chatgpt.sh; \
+	else \
+		echo "ML4W is not installed. Skipping ML4W configuration."; \
+	fi
+
+configure-vscode: sanity-check
+	ln -sf /opt/skillarch/customisation/vscode/settings.json  /home/$$USER/.config/Code/User/settings.json
+	ln -sf /opt/skillarch/customisation/vscode/keybindings.json  /home/$$USER/.config/Code/User/keybindings.json
 
 clean: ## Clean up system and remove unnecessary files
 	[ ! -f /.dockerenv ] && exit
