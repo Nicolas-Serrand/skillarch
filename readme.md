@@ -1,4 +1,4 @@
-# SkillArch - [![Security Checks & Docker Builds](https://github.com/laluka/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/laluka/skillarch/actions/workflows/cicd.yml)
+# SkillArch & ML4W Hyperland - [![Security Checks & Docker Builds](https://github.com/laluka/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/laluka/skillarch/actions/workflows/cicd.yml)
 
 <img src='assets/skillarch-full.png' width='250'>
 
@@ -361,7 +361,6 @@ I use the ML4W configuration files for Hyprland. Not only do they provide a stun
 | kitty.conf |
 | rofi-config.rasi |
 | Hyprland key bindings |
-| Hyprland monitors configuration |
 | Hyprland monitors configuration |
 | VSCode settings and keybindings |
 
