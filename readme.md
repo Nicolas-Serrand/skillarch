@@ -6,7 +6,7 @@
 > Please watch this intro video to onboard yourself! 🙏\
 > ➡️ TODO:(lalu) ⬅️
 
-<img src='assets/rice-01.png' width='800'>
+<img src='assets/rice-02-hyprland.jpg' width='800'>
 
 ---
 
@@ -341,6 +341,32 @@ https://github.com/p0dalirius/webapp-wordlists
 
 ---
 
+## Customisations
+
+Compared to the [original SkillArch](https://github.com/laluka/skillarch) version by Laluka , I have replaced the i3 window manager with Hyprland. I have also modified the dotfiles with my personal configurations to keep my comfort and preferences.
+
+### ML4W
+
+I use the ML4W configuration files for Hyprland. Not only do they provide a stunning visual experience, but they are also very easy to install and to customize. [Take a look at the project 😉 .](https://github.com/mylinuxforwork/dotfiles)
+
+
+> ⚠️ Hyprland currently has very limited compatibility with virtual machines, especially VirtualBox. My configuration is designed to be used as a main OS for best confort.
+
+
+| Main Differences with original SkillArch|
+|--------------------------------|
+| Window Manager i3 -> HyprLand |
+| zshrc |
+| vimrc |
+| kitty.conf |
+| rofi-config.rasi |
+| Hyprland key bindings |
+| Hyprland monitors configuration |
+| Hyprland monitors configuration |
+| VSCode settings and keybindings |
+
+---
+
 ## Kudos
 
 > Let's be honest, I put stuff together, but the heavy lifting is done by these true gods 😉
@@ -353,3 +379,5 @@ https://github.com/p0dalirius/webapp-wordlists
 - https://github.com/newmanls/rofi-themes-collection
 - https://github.com/orhun/config
 - https://github.com/regolith-linux/regolith-desktop
+- https://github.com/hyprwm/Hyprland
+- https://github.com/mylinuxforwork/dotfiles
