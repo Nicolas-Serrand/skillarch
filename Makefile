@@ -9,7 +9,7 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*##"; printf "\n"} /^[a-zA-Z0-9_-]+:.*?##/ { printf "  %-18s %s\n", $$1, $$2 } /^##@/ { printf "\n%s\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
 	@echo ''
 
-install: install-base install-cli-tools install-shell install-docker install-gui install-gui-tools install-offensive install-wordlists install-hardening install_customisation clean ## Install SkillArch
+install: install-base install-cli-tools install-shell install-docker install-gui install-gui-tools install-offensive install-wordlists install-hardening install-customisation clean ## Install SkillArch
 	@echo "You are all set up! Enjoy ! 🌹"
 
 sanity-check:
@@ -215,7 +215,7 @@ docker-run-full:  ## Run full docker image locally
 	xhost +
 	sudo docker run --rm -it --name=ska --net=host -v /tmp:/tmp -e DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix/ --privileged thelaluka/skillarch:full
 
-install_customisation: sanity-check install-gui-hyprland update-ml4w-hyprland install-additional-packages install-ultimate-vimrc configure-dotfiles configure-hyprland configure-ml4w configure-vscode
+install-customisation: sanity-check install-gui-hyprland update-ml4w-hyprland install-additional-packages install-ultimate-vimrc configure-dotfiles configure-hyprland configure-ml4w configure-vscode
 	@echo "Customisation installed."
 
 
