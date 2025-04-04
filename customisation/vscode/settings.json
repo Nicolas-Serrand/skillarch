@@ -81,7 +81,7 @@
       ]
     }
   ],
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Cursor Dark Core",
   "security.workspace.trust.untrustedFiles": "open",
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"

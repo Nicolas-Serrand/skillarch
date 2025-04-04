@@ -1,0 +1,23 @@
+FROM thelaluka/skillarch:full
+
+USER root
+RUN echo "hacker ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/hacker
+
+COPY . /opt/skillarch
+RUN chown -R hacker:hacker /opt/skillarch
+USER hacker
+ENV USER=hacker
+ENV TZ=UTC
+WORKDIR /opt/skillarch
+
+# Install skillarch
+RUN make install-customisation
+
+# Remove NOPASSWD capability after installation
+USER root
+RUN echo "hacker ALL=(ALL) ALL" > /etc/sudoers.d/hacker
+
+# Final setup
+USER hacker
+WORKDIR /home/hacker
+ENTRYPOINT ["/bin/zsh", "-il"]

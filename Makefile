@@ -256,8 +256,13 @@ configure-hyprland: sanity-check
 	@if [ -d "/home/$$USER/.config/hypr" ]; then \
 		ln -sf /opt/skillarch/customisation/hypr-conf/keybindings/fr-custom.conf /home/$$USER/.config/hypr/conf/keybindings/fr-custom.conf; \
 		ln -sf /opt/skillarch/customisation/hypr-conf/monitors/my-dual-screen.conf /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf; \
+		ln -sf /opt/skillarch/customisation/hypr-conf/animations/custom-animations.conf /home/$$USER/.config/hypr/conf/animations/custom-animations.conf; \
+		ln -sf /opt/skillarch/customisation/hypr-conf/workspaces/custom-workspaces.conf /home/$$USER/.config/hypr/conf/workspaces/custom-workspaces.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/keybindings/fr-custom.conf' > /home/$$USER/.config/hypr/conf/keybinding.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf' > /home/$$USER/.config/hypr/conf/monitor.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/animations/custom-animations.conf' > /home/$$USER/.config/hypr/conf/animation.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/workspaces/custom-workspaces.conf' > /home/$$USER/.config/hypr/conf/workspace.conf; \
+		echo "Hyrland configuration done."; \
 	else \
 		echo "ML4W is not installed. Skipping Hyprland configuration."; \
 	fi
@@ -268,6 +273,7 @@ configure-ml4w: sanity-check
 		echo "1" > /home/$$USER/.config/ml4w/settings/waybar_window.sh; \
 		echo "True" > /home/$$USER/.config/ml4w/settings/waybar_taskbar.sh; \
 		echo "False" > /home/$$USER/.config/ml4w/settings/waybar_chatgpt.sh; \
+		echo "ML4W configuration done."; \
 	else \
 		echo "ML4W is not installed. Skipping ML4W configuration."; \
 	fi
@@ -275,6 +281,8 @@ configure-ml4w: sanity-check
 configure-vscode: sanity-check
 	ln -sf /opt/skillarch/customisation/vscode/settings.json  "/home/$$USER/.config/Code - OSS/User/settings.json"
 	ln -sf /opt/skillarch/customisation/vscode/keybindings.json  "/home/$$USER/.config/Code - OSS/User/keybindings.json"
+	echo "VSCode configuration done."
+
 
 clean: ## Clean up system and remove unnecessary files
 	[ ! -f /.dockerenv ] && exit
@@ -293,3 +301,6 @@ clean: ## Clean up system and remove unnecessary files
 	sudo find /var/log -type f -name "*.old" -delete
 	sudo find /var/log -type f -name "*.gz" -delete
 	sudo find /var/log -type f -exec truncate --size=0 {} \;
+
+
+# nxp18  telecommandes.ouest@fr.otis.com
