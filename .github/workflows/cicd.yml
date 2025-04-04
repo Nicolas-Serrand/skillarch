@@ -78,8 +78,7 @@ jobs:
           file: ./Dockerfile-full-custom
           push: false
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/skillarch:full-custom
-            ${{ secrets.DOCKERHUB_USERNAME }}/skillarch:full-custom-${{ github.sha }}
+            skillarch:full-custom
 
   semgrep:
     name: semgrep
