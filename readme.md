@@ -4,7 +4,7 @@
 
 > The lite/full install takes 20/30 minutes 🕑️\
 > Please watch this intro video to onboard yourself! 🙏\
-> ➡️ TODO:(lalu) ⬅️
+> ➡️ TBD ⬅️
 
 <img src='assets/rice-02-hyprland.jpg' width='800'>
 
@@ -302,6 +302,7 @@ https://github.com/offensive-security/exploit-database
 https://gitlab.com/exploit-database/exploitdb
 https://github.com/laluka/pty4all
 https://github.com/laluka/pypotomux
+https://github.com/hugsy/gef
 
 # Clones Wordlists
 https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
