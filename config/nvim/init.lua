@@ -4,7 +4,7 @@ vim.opt.mouse = ""
 
 -- Function to apply transparency settings globally
 local function set_transparency()
-  vim.cmd([[
+	vim.cmd([[
 hi Normal guibg=NONE ctermbg=NONE
 hi NormalNC guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
@@ -25,10 +25,10 @@ hi EndOfBuffer guibg=NONE ctermbg=NONE
 end
 
 -- Apply transparency settings initially
-set_transparency()
+-- set_transparency()
 
 -- Reapply transparency on buffer enter
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  callback = set_transparency,
-})
+-- vim.api.nvim_create_autocmd("BufEnter", {
+-- pattern = "*",
+-- callback = set_transparency,
+-- })
