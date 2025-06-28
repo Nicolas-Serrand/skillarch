@@ -85,6 +85,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  }
+  },
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "explorer.confirmDelete": false
 
 }
