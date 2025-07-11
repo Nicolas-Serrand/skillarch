@@ -263,10 +263,14 @@ configure-hyprland: sanity-check
 		ln -sf /opt/skillarch/customisation/hypr-conf/monitors/my-dual-screen.conf /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf; \
 		ln -sf /opt/skillarch/customisation/hypr-conf/animations/custom-animations.conf /home/$$USER/.config/hypr/conf/animations/custom-animations.conf; \
 		ln -sf /opt/skillarch/customisation/hypr-conf/workspaces/custom-workspaces.conf /home/$$USER/.config/hypr/conf/workspaces/custom-workspaces.conf; \
+		ln -sf /opt/skillarch/customisation/hypr-conf/layouts/i3.conf /home/$$USER/.config/hypr/conf/layouts/i3.conf; \
+		ln -sf /opt/skillarch/customisation/hypr-conf/windows/small-border-small-gap.conf /home/$$USER/.config/hypr/conf/windows/small-border-small-gap.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/keybindings/fr-custom.conf' > /home/$$USER/.config/hypr/conf/keybinding.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf' > /home/$$USER/.config/hypr/conf/monitor.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/animations/custom-animations.conf' > /home/$$USER/.config/hypr/conf/animation.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/workspaces/custom-workspaces.conf' > /home/$$USER/.config/hypr/conf/workspace.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/layouts/i3.conf' > /home/$$USER/.config/hypr/conf/layout.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/windows/small-border-small-gap.conf' > /home/$$USER/.config/hypr/conf/window.conf; \
 		echo "Hyrland configuration done."; \
 	else \
 		echo "ML4W is not installed. Skipping Hyprland configuration."; \
