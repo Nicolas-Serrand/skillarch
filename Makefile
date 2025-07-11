@@ -266,7 +266,7 @@ configure-hyprland: sanity-check
 		ln -sf /opt/skillarch/customisation/hypr-conf/layouts/i3.conf /home/$$USER/.config/hypr/conf/layouts/i3.conf; \
 		ln -sf /opt/skillarch/customisation/hypr-conf/windows/small-border-small-gap.conf /home/$$USER/.config/hypr/conf/windows/small-border-small-gap.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/keybindings/fr-custom.conf' > /home/$$USER/.config/hypr/conf/keybinding.conf; \
-		echo 'source = /home/$$USER/.config/hypr/conf/monitors/my-dual-screen.conf' > /home/$$USER/.config/hypr/conf/monitor.conf; \
+		echo 'source = /home/$$USER/.config/hypr/conf/monitors/1920x1080.conf' > /home/$$USER/.config/hypr/conf/monitor.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/animations/custom-animations.conf' > /home/$$USER/.config/hypr/conf/animation.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/workspaces/custom-workspaces.conf' > /home/$$USER/.config/hypr/conf/workspace.conf; \
 		echo 'source = /home/$$USER/.config/hypr/conf/layouts/i3.conf' > /home/$$USER/.config/hypr/conf/layout.conf; \
