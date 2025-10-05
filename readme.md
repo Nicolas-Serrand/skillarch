@@ -1,10 +1,9 @@
 # SkillArch & ML4W Hyperland - [![Security Checks & Docker Builds](https://github.com/laluka/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/laluka/skillarch/actions/workflows/cicd.yml)[![Security Checks from this fork](https://github.com/nicolas-serrand/skillarch/actions/workflows/cicd.yml/badge.svg)](https://github.com/nicolas-serrand/skillarch/actions/workflows/cicd.yml)
 
-<img src='assets/skillarch-full.png' width='250'>
+<img src='assets/logo-round-cold.png' width='250'><img src='assets/logo-round-hot.png' width='250'>
 
-> The lite/full install takes 20/30 minutes 🕑️\
-> Please watch this intro video to onboard yourself! 🙏\
-> ➡️ TBD ⬅️
+> The lite/full install takes 10/15 minutes 🕑️\
+> And here is a gentle rice 😇
 
 <img src='assets/rice-02-hyprland.jpg' width='800'>
 
@@ -14,6 +13,10 @@
 
 ### SIMPLE / NO-CUSTOMIZE / NO-BACKUP
 
+> 🔴🎬🙏 Please watch this 5mn intro video to onboard yourself! 🙏🎬🔴
+
+[![](https://img.youtube.com/vi/HB1hxJgGoDo/0.jpg)](https://youtu.be/HB1hxJgGoDo)
+
 - First, download the `Desktop Edition` at https://cachyos.org/download/
 - Install it, pick the `Gnome` flavor
 - Then open `Console` and install SkillArch 🥂
@@ -22,9 +25,16 @@
 git clone https://github.com/laluka/skillarch
 sudo mv skillarch /opt/skillarch && cd /opt/skillarch
 make install # Then reboot && pick i3 at login
+
+# Update by running this command (will pull changes & apply them):
+ska-update-simple
 ```
 
 ###  ADVANCED / FULL-CUSTOMIZE / FULL-BACKUP
+
+> 🔴🎬🙏 Please watch this 10mn intro video to onboard yourself! 🙏🎬🔴
+
+[![](https://img.youtube.com/vi/Wq6CmJJnTJk/0.jpg)](https://youtu.be/Wq6CmJJnTJk)
 
 1. [Fork this repo](https://github.com/laluka/skillarch/fork)
 1. Install `your` SkillArch with the [usual install process](#simple--no-customize--no-backup)
@@ -32,8 +42,12 @@ make install # Then reboot && pick i3 at login
 1. When you'll want to `add a tweak` or  `update your setup` 🫶
 
 ```bash
+# Update by running this command (simply follow the process):
+ska-update-advanced
+
+# "The process" is mostly like below:
 # SAVE your changes on your repo
-git add foo ; git commit -m 'added foo' ; git push
+git add foo ; git commit -m i-added-foo ; git push
 # Then, from a CLEAN git state
 ska && git status
 # PULL & CHECKOUT upstream changes
@@ -55,6 +69,10 @@ ska-update-simple
 ---
 
 ## Documentation
+
+> 🔴🎬🙏 Please watch this 1h FULL TOUR video so you can make the most out of your SkillArch Adventure! 🙏🎬🔴
+
+[![](https://img.youtube.com/vi/pUm7KEgM2g8/0.jpg)](https://youtu.be/pUm7KEgM2g8)
 
 ### Get Help
 
@@ -110,6 +128,8 @@ make help
 - Chrome extensions are not installed by default. Have a look to [/config/chrome-extensions.lst](/config/chrome-extensions.lst)
 
 ### VM & VirtualBox Stuff
+
+> I've had tons of issues with VirtualBox laterly, and things worked PERFECTLY on Gnome Boxes (from `qemu-full` and `gnome-extra`), I strongly suggest using it instead, see the install guide above.
 
 - The `ska-vbox-install-guestutils` alias will auto-install `virtualbox-guest-utils`
 - In `VirtualBox`, when i3 starts it will run `VBoxClient-all` for clipboard & goodies
@@ -310,7 +330,6 @@ https://github.com/hugsy/gef
 # Clones Wordlists
 https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
 https://github.com/swisskyrepo/PayloadsAllTheThings
-https://github.com/projectdiscovery/fuzzing-templates
 https://github.com/1N3/BruteX
 https://github.com/1N3/IntruderPayloads
 https://github.com/berzerk0/Probable-Wordlists
