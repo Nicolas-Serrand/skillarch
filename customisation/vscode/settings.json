@@ -87,6 +87,7 @@
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "terminal.integrated.sendKeybindingsToShell": true,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "python.defaultInterpreterPath": "/bin/python"
 
 }
